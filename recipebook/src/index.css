@@ -24,9 +24,32 @@ code
 
 .dialogue-box
 {
-  width: 800px;
+  width: 500px;
   max-width: 80%;
   background-color: aliceblue;
   padding: 10px;
   border-radius: 5px;
+}
+
+.btn-grid
+{
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn
+{
+  background-color:azure;
+  border: 1px solid rgb(202, 214, 214);
+  border-radius: 5px;
+  padding: 5px, 10px;
+  outline: none;
+}
+
+.btn:hover
+{
+  /*background-color: aqua;*/
+  border-color: rgb(58, 58, 58);
 }
