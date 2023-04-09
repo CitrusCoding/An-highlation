@@ -24,7 +24,9 @@ code
 
 .dialogue-box
 {
-  width: 500px;
+  text-align: center;
+  /*height: 70px;*/
+  width: 700px;
   max-width: 80%;
   background-color: aliceblue;
   padding: 10px;
@@ -37,10 +39,12 @@ code
   grid-template-columns: repeat(2, auto);
   gap: 10px;
   margin-top: 20px;
+  justify-content: center;
 }
 
 .btn
 {
+  width: 100px; /*this being preset means that the buttons don't resize with text, fix that later if needed*/
   background-color:azure;
   border: 1px solid rgb(202, 214, 214);
   border-radius: 5px;
