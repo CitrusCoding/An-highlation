@@ -17,6 +17,8 @@ let state = {}; //keep track of choices
 
 const textElement = document.getElementById('text');
 const optionButtonsElement = document.getElementById('response-options');
+var body = document.getElementsByTagName('body')[0];
+var bgimage = body.style.backgroundImage; 
 
 function startGame()
 {
@@ -63,6 +65,11 @@ function selectOption(option)
   showTextNode(nextTextNodeId);
 }
 
+function changeImage(image)
+{
+  
+}
+
 //conversation tree
 const textNodes = 
 [
@@ -86,7 +93,9 @@ const textNodes =
       {
         text: "Autumn",
         setState: {autumn: true}, //might be uneccesary, change background to season
-        background: "orange", //just a tester 
+        //background: "orange", //just a tester, doesn't work
+        //bgimage: "images/fall.jpg", //doesnt work
+
         nextText: 3
       },
       {
