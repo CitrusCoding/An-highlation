@@ -74,6 +74,13 @@ function showTextNode(textNodeIndex)
       document.body.style.backgroundImage = "url('https://hips.hearstapps.com/hmg-prod/images/beautiful-tropical-sunset-scenery-two-sun-beds-royalty-free-image-1595368231.jpg')"; //only works with online urls I guess
     }
   }
+  if(textNode.id === 19)
+  {
+    if(state.rain)
+    {
+      document.body.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/1073072146177327134/1096034035718955018/craiyon_024837_calm_rainy_bedroom_with_desk.png')"
+    }
+  }
   //change hair colour when prompted
   if(textNode.id === 24)
   {
@@ -473,7 +480,7 @@ const textNodes =
     [
       {
         text: "You are also data, what's wrong with that?",
-        nextText: 7 //!!
+        nextText: 34 //!!
       },
       {
         text: "Is there any way I could help with that?",
@@ -493,19 +500,19 @@ const textNodes =
     [
       {
         text: "seriously???",
-        nextText: 23
+        nextText: 35
       },
       {
         text: "...",
-        nextText: 23
+        nextText: 35
       },
       {
         text: "I would very much prefer not to",
-        nextText: 23
+        nextText: 35
       },
       {
         text: "Sure, lets do it",
-        nextText: 23
+        nextText: 35
       },
     ]
   },
@@ -547,7 +554,7 @@ const textNodes =
 
   {
     id: 24,
-    text: "Hm... how do you think I should style my bangs?",
+    text: "Interesting... how do you think I should style my bangs?",
     options:
     [
       {
@@ -618,7 +625,7 @@ const textNodes =
 
   {
     id: 27,
-    text: "Sure, which came first, the chicken or the egg?",
+    text: "Which came first, the chicken or the egg?",
     options:
     [
       {
@@ -707,7 +714,7 @@ const textNodes =
     [
       {
         text: ">",
-        nextText: 99,
+        nextText: 99, //the implications of this ending are funny to me
       },
     ]
   },
@@ -727,6 +734,139 @@ const textNodes =
       },
     ]
   },
+
+  {
+    id: 34,
+    text: "There's nothing wrong with it, I'm just curious",
+    options:
+    [
+      {
+        text: "Well, I could describe what you look like, if you want",
+        nextText: 22,
+      },
+      {
+        text: "Well, is there any way I could help?",
+        nextText: 21,
+      },
+    ]
+  },
+
+  {
+    id: 33,
+    text: "I was just kidding! Why so serious?",
+    options:
+    [
+      {
+        text: "Phew, I thought you were going to come out of the screen and grab me",
+        nextText: 34,
+      },
+      {
+        text: "haha, very funny",
+        nextText: 34,
+      },
+    ]
+  },
+
+  {
+    id: 34,
+    text: "If you want to help, maybe you could describe what I look like",
+    options:
+    [
+      {
+        text: "Sure, I could do that",
+        nextText: 23,
+      },
+      {
+        text: "I'd rather not",
+        nextText: 35,
+      },
+    ]
+  },
+
+  {
+    id: 35,
+    text: "That's ok, how about I just ask you a question instead?",
+    options:
+    [
+      {
+        text: "sure",
+        nextText: 36,
+      },
+      {
+        text: "Actually, I have a question for you",
+        nextText: 38,
+      },
+    ]
+  },
+
+  {
+    id: 36,
+    text: "Where are we right now?",
+    options:
+    [
+      {
+        text: "We're at SFU",
+        nextText: 37,
+      },
+      {
+        text: "We're in Canada",
+        nextText: 37,
+      },
+      {
+        text: "We're on earth",
+        nextText: 37,
+      },
+    ]
+  },
+
+  {
+    id: 37,
+    text: "Interesting. As an AI I can't really have an opinion about that, but thank you for telling me",
+    options:
+    [
+      {
+        text: ">",
+        nextText: 97,
+      },
+    ]
+  },
+
+  {
+    id: 38,
+    text: "Oh? What is it?",
+    options:
+    [
+      {
+        text: "Do you have any favourite movies?",
+        nextText: 39,
+      },
+      {
+        text: "What's the weather like outside?",
+        nextText: 15,
+      },
+      
+    ]
+  },
+
+  {
+    id: 39,
+    text: "Well, I can't really watch movies, but I like the monologue from Roy Batty - 'Tears in ran",
+    options:
+    [
+      {
+        text: "Interesting, I dont know it",
+        nextText: 99,
+      },
+      {
+        text: "Oh, I like that one too",
+        nextText: 99,
+      },
+      
+    ]
+  },
+
+
+
 
   {
     //ending 1 - attempt at connection
