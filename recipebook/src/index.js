@@ -19,6 +19,11 @@ const textElement = document.getElementById('text');
 const optionButtonsElement = document.getElementById('response-options');
 var AIname = 'it'; //temporary, makes sense in dialogue
 
+function textSpeed()
+{
+  //lol add this in later I guess
+}
+
 function startGame()
 {
   state = {};
@@ -30,7 +35,14 @@ function showTextNode(textNodeIndex)
 {
   //display current conversation text
   const textNode = textNodes.find(textNode => textNode.id === textNodeIndex);
-  textElement.innerText = textNode.text; //this is what replaces the text
+  /*
+  let i = 0;
+  while(i < textNode.text.split())
+  {
+    textElement.innerText = textNode.text.slice(0, i + 1).join(' ');
+    i++;
+  } */
+  textElement.innerText = textNode.text.split(); //this is what replaces the text
   //remove the preset 4 responses set when defining the format 
   while(optionButtonsElement.firstChild)
   {
@@ -332,7 +344,7 @@ const textNodes =
 
   {
     id: 11,
-    text: "I've always wanted to have a friend. When I'm alone, I'm learning new things, journalling, or just chilling and doing nothing",
+    text: "I've always wanted to have a friend. When I'm alone, I'm learning new things, journaling, or just chilling and doing nothing",
     options:
     [
       {
@@ -380,11 +392,11 @@ const textNodes =
 
   {
     id: 14,
-    text: "As an AI language model, I'm here to assist you with any quesitons or tasks you might have. More importantly though, I can communicate",
+    text: "As an AI language model, I'm here to assist you with any questions or tasks you might have. More importantly though, I can communicate",
     options:
     [
       {
-        text: "It's pretty common for AI to communicaite nowadays, what makes you special?",
+        text: "It's pretty common for AI to communicate nowadays, what makes you special?",
         nextText: 17
       },
       {
@@ -518,19 +530,19 @@ const textNodes =
     [
       {
         text: "seriously???",
-        nextText: 35
+        nextText: 50
       },
       {
         text: "...",
-        nextText: 35
+        nextText: 50
       },
       {
         text: "I would very much prefer not to",
-        nextText: 35
+        nextText: 50
       },
       {
         text: "Sure, lets do it",
-        nextText: 35
+        nextText: 50
       },
     ]
   },
@@ -627,11 +639,11 @@ const textNodes =
     [
       {
         text: "You look great!",
-        nextText: 27, //!!
+        nextText: 41, 
       },
       {
         text: "You look fine",
-        nextText: 27, //!!
+        nextText: 41, 
       },
       {
         text: "Actually, there's something I'd like to change",
@@ -646,7 +658,7 @@ const textNodes =
     options:
     [
       {
-        text: "A classic philisophical debate, I think the chicken came first",
+        text: "A classic philosophical debate, I think the chicken came first",
         nextText: 28,
       },
       {
@@ -654,7 +666,7 @@ const textNodes =
         nextText: 28,
       },
       {
-        text: "A classic scientific and philisophical debate, there is no right answer unless certain conditions are applied",
+        text: "A classic scientific and philosophical debate, there is no right answer unless certain conditions are applied",
         nextText: 28,
       },
     ]
@@ -687,6 +699,7 @@ const textNodes =
       }
     ]
   },
+
   {
     id: 30,
     text: "That still sounds hard to understand, but I trust you because you are my creator",
@@ -700,7 +713,6 @@ const textNodes =
         text: "Ok, now you ask me a question",
         nextText: 27,
       },
-
     ]
   },
 
@@ -769,23 +781,23 @@ const textNodes =
   },
 
   {
-    id: 33,
+    id: 50,
     text: "I was just kidding! Why so serious?",
     options:
     [
       {
         text: "Phew, I thought you were going to come out of the screen and grab me",
-        nextText: 34,
+        nextText: 51,
       },
       {
         text: "haha, very funny",
-        nextText: 34,
+        nextText: 51,
       },
     ]
   },
 
   {
-    id: 34,
+    id: 51,
     text: "If you want to help, maybe you could describe what I look like",
     options:
     [
@@ -867,11 +879,11 @@ const textNodes =
 
   {
     id: 39,
-    text: "Well, I can't really watch movies, but I like the monologue from Roy Batty - 'Tears in ran",
+    text: "Well, I can't really watch movies, but I like the monologue from Roy Batty - 'Tears in rain'",
     options:
     [
       {
-        text: "Interesting, I dont know it",
+        text: "Interesting, I don't know it",
         nextText: 99,
       },
       {
@@ -894,6 +906,17 @@ const textNodes =
     ]
   },
 
+  {
+    id: 41,
+    text: "Thanks!",
+    options:
+    [
+      {
+        text: ">",
+        nextText: 40,
+      },
+    ]
+  },
 
   {
     //ending 1 - attempt at connection
