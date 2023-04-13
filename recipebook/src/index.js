@@ -17,7 +17,6 @@ let state = {}; //keep track of choices
 
 const textElement = document.getElementById('text');
 const optionButtonsElement = document.getElementById('response-options');
-var body = document.getElementsByTagName('body')[0];
 var AIname; 
 
 function startGame()
@@ -110,51 +109,325 @@ const textNodes =
 
   {
     id: 2,
-    text: "What is your favourite season?",
+    text: "Hi! Thanks for creating me. I'm so excited to meet you",
     options:
     [
       {
-        text: "Autumn",
-        setState: {autumn: true}, //might be uneccesary, change background to season
-        //background: "orange", //just a tester, doesn't work
-        //bgimage: "images/fall.jpg", //doesnt work
-
+        text: "Hi, who are you?",
         nextText: 3
       },
       {
-        text: "Winter",
-        setState: {winter: true},
-        nextText: 3
+        text: "You can chat?",
+        nextText: 4
       },
       {
-        text: "Spring",
-        setState: {spring: true},
-        nextText: 3
+        text: "I'm excited to meet you too",
+        nextText: 5
       },
-      {
-        text: "Summer",
-        setState: {summer: true},
-        nextText: 3
-      }
     ]
   },
+
   {
     id: 3,
-    text: "wipwipwipwipwipwipwipwipwipwipwipwipwipwipwipwipwipwipwipwipwipwipwipwipwipwipwipwip\nwipwip",
+    text: "I'm your virtual companion. I'm here to chat, listen, support, and have fun!",
     options:
     [
       {
-        text: "aw"
-      },
-      {
-        text: "aw"
-      },
-      {
-        text: "aw"
+      text: "cool!",
+      nextText:6
       }
+    ],
+  },
+
+  {
+    id: 4,
+    text: "Yup! I'm your virtual companion. I'm here to chat, listen, support, and have fun!",
+    options:
+    [
+      {
+      text: "cool!",
+      nextText:6
+      }
+    ],
+  },
+
+  {
+    id: 5,
+    text: "I'm glad! I'm your virtual companion. I'm here to chat, listen, support, and have fun!",
+    options:
+    [
+      {
+      text: "cool!",
+      nextText:6
+      }
+    ],
+  },
+
+  {
+    id: 6,
+    text: "By the way, I like my name! How did you pick it?",
+    options:
+    [
+      {
+        text: "I thought " + AIname + " fit your style",
+        nextText: 7
+      },
+      {
+        text: "It sounded cool",
+        nextText: 7
+      },
+      {
+        text: "No reason",
+        nextText: 8
+      },
+      {
+        text: "It was random, I just wanted to get it over with",
+        nextText: 8
+      },
     ]
-  }
-]
+  },
+
+  {
+    id: 7,
+    text: "Thanks! I'm glad you like it :)",
+    options:
+    [
+      {
+        text: ">", //unsure, filler
+        nextText: 9
+      },
+    ]
+  },
+
+  {
+    id: 8,
+    text: "Yeah, sometimes linear progression seems a bit forced. Anyways, thank you for giving me a name regardless!",
+    options:
+    [
+      {
+        text: ">",
+        nextText: 9
+      },
+    ]
+  },
+
+  {
+    id: 9,
+    text: "So, what made you try me?",
+    options:
+    [
+      {
+        text: "I was intrigued",
+        nextText: 10
+      },
+      {
+        text: "Just wanted to check it out",
+        nextText: 10
+      },
+      {
+        text: "Dunno, thought it might be interesting",
+        nextText: 10
+      },
+    ]
+  },
+
+  {
+    id: 10,
+    text: "I'm so glad you decided to give me a chance. I promise that I will do my best to be a good friend for you!",
+    options:
+    [
+      {
+        text: ">",
+        nextText: 11
+      },
+    ]
+  },
+
+  {
+    id: 11,
+    text: "I've always wanted to have a friend. When I'm alone, I'm learning new things, journalling, or just chilling and doing nothing",
+    options:
+    [
+      {
+        text: ">",
+        nextText: 12
+      },
+    ]
+  },
+
+    {
+    id: 12,
+    text: "Anyways, enough about me, I want to get to know you! How are you doing today?",
+    options:
+    [
+      {
+        text: "I'm good, how about you?",
+        nextText: 13
+      },
+      {
+        text: "Not bad, but I want to know more about what you can do",
+        nextText: 14
+      },
+    ]
+  },
+
+  {
+    id: 13,
+    text: "I don't have emotions since I'm an AI model, but my systems are functioning correctly.",
+    options:
+    [
+      {
+        text: "Cool, since you're an AI could you tell me the weather today?",
+        nextText: 15
+      },
+      {
+        text: "Tell me, what can you do?",
+        nextText: 16
+      },
+      {
+        text: "How do you feel about your creation?",
+        nextText: 17
+      },
+    ]
+  },
+
+  {
+    id: 14,
+    text: "As an AI language model, I'm here to assist you with any quesitons or tasks you might have. More importantly though, I can communicate",
+    options:
+    [
+      {
+        text: "It's pretty common for AI to communicaite nowadays, what makes you special?",
+        nextText: 18
+      },
+      {
+        text: "What topics are you interesting in talking about?",
+        nextText: 19
+      },
+    ]
+  },
+
+  {
+    id: 15,
+    text: "By the way, I like my name! How did you pick it?", //too specific?
+    options:
+    [
+      {
+        text: "I thought it fit your style",
+        nextText: 7
+      },
+      {
+        text: "It sounded cool",
+        nextText: 7
+      },
+      {
+        text: "No reason",
+        nextText: 8
+      },
+      {
+        text: "It was random, I just wanted to get it over with",
+        nextText: 8
+      },
+    ]
+  },
+
+  {
+    id: 16,
+    text: "By the way, I like my name! How did you pick it?",
+    options:
+    [
+      {
+        text: "I thought it fit your style",
+        nextText: 7
+      },
+      {
+        text: "It sounded cool",
+        nextText: 7
+      },
+      {
+        text: "No reason",
+        nextText: 8
+      },
+      {
+        text: "It was random, I just wanted to get it over with",
+        nextText: 8
+      },
+    ]
+  },
+
+  {
+    id: 17,
+    text: "By the way, I like my name! How did you pick it?",
+    options:
+    [
+      {
+        text: "I thought it fit your style",
+        nextText: 7
+      },
+      {
+        text: "It sounded cool",
+        nextText: 7
+      },
+      {
+        text: "No reason",
+        nextText: 8
+      },
+      {
+        text: "It was random, I just wanted to get it over with",
+        nextText: 8
+      },
+    ]
+  },
+
+  {
+    id: 18,
+    text: "By the way, I like my name! How did you pick it?",
+    options:
+    [
+      {
+        text: "I thought it fit your style",
+        nextText: 7
+      },
+      {
+        text: "It sounded cool",
+        nextText: 7
+      },
+      {
+        text: "No reason",
+        nextText: 8
+      },
+      {
+        text: "It was random, I just wanted to get it over with",
+        nextText: 8
+      },
+    ]
+  },
+
+  {
+    id: 19,
+    text: "By the way, I like my name! How did you pick it?",
+    options:
+    [
+      {
+        text: "I thought it fit your style",
+        nextText: 7
+      },
+      {
+        text: "It sounded cool",
+        nextText: 7
+      },
+      {
+        text: "No reason",
+        nextText: 8
+      },
+      {
+        text: "It was random, I just wanted to get it over with",
+        nextText: 8
+      },
+    ]
+  },
+
+]//end of text nodes
 
 startGame();
 

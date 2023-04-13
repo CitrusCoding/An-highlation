@@ -3,11 +3,11 @@ body
   /*affect positioning on page*/
   padding: 0;
   margin: 0;
-  display: flex;
+  display: flex; 
   justify-content: center;
   align-items: flex-end;
   width: 100vw; 
-  height: 100vh; 
+  height: 95vh; 
   background-color: rgb(128, 128, 128);
   background-image: url("images/spring.jpg"); /*default spring*/
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -18,10 +18,14 @@ body
 }
 
 img {
-  width: 150px;
+  width: 300px;
+  position: fixed;
+  bottom: 30%;
+  right: 40%;
   /*margin-top: auto;
   margin-bottom: auto;*/
-  object-position: left top;
+  /*object-position: bottom;*/
+  /*float: right; */ /*only horizontal alignment*/
   /*display: flex;
   justify-content: center;*/
 }
@@ -36,6 +40,7 @@ code
 .dialogue-box
 {
   /*specific dialogue box formatting*/
+  object-position: bottom;
   text-align: center;
   /*height: 70px;*/
   width: 700px;
@@ -56,7 +61,7 @@ code
 
 .btn
 {
-  width: 100px; /*this being preset means that the buttons don't resize with text, fix that later if needed*/
+  /*width: 100px;*/ /*this being preset means that the buttons don't resize with text, fix that later if needed*/
   background-color:azure;
   border: 1px solid rgb(202, 214, 214);
   border-radius: 5px;
