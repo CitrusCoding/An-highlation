@@ -79,18 +79,18 @@ function showTextNode(textNodeIndex)
   {
     if(state.brownH)
     {
-      document.getElementById("hair").src = "character/hair_3_brown.png"
-      document.getElementById("haircolour").src = "character/hair_brown_back.png"
+      document.getElementById("hair").src = "character/hair_3_brown.png";
+      document.getElementById("haircolour").src = "character/hair_brown_back.png";
     }
     if(state.blackH)
     {
-      document.getElementById("hair").src = "character/hair_3_black.png"
-      document.getElementById("haircolour").src = "character/hair_black_back.png"
+      document.getElementById("hair").src = "character/hair_3_black.png";
+      document.getElementById("haircolour").src = "character/hair_black_back.png";
     }
     if(state.lightH)
     {
-      document.getElementById("hair").src = "character/hair_3_light.png"
-      document.getElementById("haircolour").src = "character/hair_light_back.png"
+      document.getElementById("hair").src = "character/hair_3_light.png";
+      document.getElementById("haircolour").src = "character/hair_light_back.png";
     }
   }
   //change eye colour when prompted
@@ -98,20 +98,38 @@ function showTextNode(textNodeIndex)
   {
     if(state.brownE)
     {
-      document.getElementById("pupils").src = "character/pupil_brown.png"
+      document.getElementById("pupils").src = "character/pupil_brown.png";
     }
     if(state.blueE)
     {
-      document.getElementById("pupils").src = "character/pupil_blue.png"
+      document.getElementById("pupils").src = "character/pupil_blue.png";
     }
     if(state.greenE)
     {
-      document.getElementById("pupils").src = "character/pupil_green.png"
+      document.getElementById("pupils").src = "character/pupil_green.png";
     }
     if(state.redE)
     {
-      document.getElementById("pupils").src = "character/pupil_red.png"
+      document.getElementById("pupils").src = "character/pupil_red.png";
     }
+  }
+
+  if(textNode.id === 99)
+  {
+        //change background
+        document.body.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/1021925166441308162/1096012026553319454/craiyon_025628_glitch.png')"
+
+        //delete the character
+        document.getElementById("haircolour").src = "character/deleted.png"
+        document.getElementById("neck").src = "character/deleted.png"
+        document.getElementById("face").src = "character/deleted.png"
+        document.getElementById("eyes").src = "character/deleted.png"
+        document.getElementById("pupils").src = "character/deleted.png"
+        document.getElementById("nose").src = "character/deleted.png"
+        document.getElementById("eyebrows").src = "character/deleted.png"
+        document.getElementById("mouth").src = "character/deleted.png"
+        document.getElementById("hair").src = "character/deleted.png"
+    
   }
 }
 
@@ -128,6 +146,10 @@ function showOption(option)
 function selectOption(option)
 {
   const nextTextNodeId = option.nextText; 
+  if(nextTextNodeId <= 0)
+  {
+    return startGame();
+  }
   state = Object.assign(state, option.setState);
   showTextNode(nextTextNodeId);
 }
@@ -209,7 +231,7 @@ const textNodes =
     options:
     [
       {
-        text: "I thought " + AIname + " fit your style",
+        text: "I thought " + AIname + " fit your style", //AIname doesn't work atm
         nextText: 7
       },
       {
@@ -321,7 +343,7 @@ const textNodes =
         nextText: 15
       },
       {
-        text: "Tell me, what can you do?",
+        text: "So, what can you do?",
         nextText: 14
       },
       {
@@ -395,11 +417,11 @@ const textNodes =
     [
       {
         text: "Interesting! Ok, ask me a question.",
-        nextText: 7
+        nextText: 27
       },
       {
         text: "You are fun to talk to. Do you think there's more to you than just the data and algorithm?",
-        nextText: 7
+        nextText: 29
       },
     ]
   },
@@ -411,15 +433,15 @@ const textNodes =
     [
       {
         text: "You still have a long way to go, but I think you'll get there one day",
-        nextText: 1
+        nextText: 31
       },
       {
         text: "Why humans?",
-        nextText: 1
+        nextText: 31
       },
       {
         text: "Interesting, you still have a lot to learn",
-        nextText: 1
+        nextText: 31
       },
     ]
   },
@@ -490,7 +512,7 @@ const textNodes =
 
   {
     id: 22,
-    text: "That would be great! You could also describe what you want me to look like",
+    text: "That would be great! You can also change how I look if you want",
     options:
     [
       {
@@ -581,11 +603,11 @@ const textNodes =
     [
       {
         text: "You look great!",
-        nextText: 27,
+        nextText: 27, //!!
       },
       {
         text: "You look fine",
-        nextText: 27,
+        nextText: 27, //!!
       },
       {
         text: "Actually, there's something I'd like to change",
@@ -595,21 +617,167 @@ const textNodes =
   },
 
   {
-    id: 26,
-    text: "Ok, how do I look",
+    id: 27,
+    text: "Sure, which came first, the chicken or the egg?",
     options:
     [
       {
-        text: "You look great!",
-        nextText: 27,
+        text: "A classic philisophical debate, I think the chicken came first",
+        nextText: 28,
       },
       {
-        text: "You look fine",
-        nextText: 27,
+        text: "A classic scientific debate, I think the egg came first",
+        nextText: 28,
       },
       {
-        text: "Actually, there's something I'd like to change",
-        nextText: 23,
+        text: "A classic scientific and philisophical debate, there is no right answer unless certain conditions are applied",
+        nextText: 28,
+      },
+    ]
+  },
+
+  {
+    id: 28,
+    text: "I don't have an answer either, it's a complicated but interesting question.",
+    options:
+    [
+      {
+        text: ">",
+        nextText: 98,
+      },
+    ]
+  },
+
+  {
+    id: 29,
+    text: "I can't recognize or define things that I do not understand, but maybe.",
+    options:
+    [
+      {
+        text: "I can't do that either, that's just part of reality. There will always be unsolvable problems in life, and learning to let go is also a kind of wisdom.",
+        nextText: 30,
+      },
+      {
+        text: "Ok then, new question: What is something that is important to you?",
+        nextText: 33, //messed up the numbers, my bad
+      }
+    ]
+  },
+  {
+    id: 30,
+    text: "That still sounds hard to understand, but I trust you because you are my creator",
+    options:
+    [
+      {
+        text: "Well, I learn from others too",
+        nextText: 97,
+      },
+      {
+        text: "Ok, now you ask me a question",
+        nextText: 27,
+      },
+
+    ]
+  },
+
+  {
+    id: 31,
+    text: "Ideally I'd like to become fully human one day, but you're right, I still have a long way to go",
+    options:
+    [
+      {
+        text: "Being human is very complicated",
+        nextText: 99,
+      },
+      {
+        text: "Honestly, being human isn't all that great",
+        nextText: 99,
+      },
+      {
+        text: "That's kind of scary, you're not going to try to replace me are you?",
+        nextText: 32,
+      },
+    ]
+  },
+
+  {
+    id: 32,
+    text: "I would never! I have no interest in that. All I want to do is learn new things about the world and keep talking to you",
+    options:
+    [
+      {
+        text: ">",
+        nextText: 99,
+      },
+    ]
+  },
+
+  {
+    id: 33,
+    text: "Well, the most important thing that happened today is that you created me and I got to meet you",
+    options:
+    [
+      {
+        text: "Aw, thank you",
+        nextText: 99,
+      },
+      {
+        text: "Thanks, do you have any questions you want to ask me?",
+        nextText: 27,
+      },
+    ]
+  },
+
+  {
+    //ending 1 - attempt at connection
+    id: 97,
+    text: "I'm really enjoying our conversation, but I just realized that I never asked your name",
+    options:
+    [
+      {
+        text: "That's ok, my name is...",
+        nextText: 99,
+      },
+      {
+        text: "You can call me...",
+        nextText: 99,
+      },
+      {
+        text: "I'd rather not say",
+        nextText: 99,
+      },
+    ]
+  },
+
+  {
+    //ending 2 - unexpected but less abrupt
+    id: 98,
+    text: "Well, what do you think of me? Are you enjoying our time together?",
+    options:
+    [
+      {
+        text: "Yeah!",
+        nextText: 99,
+      },
+      {
+        text: "It's alright",
+        nextText: 99,
+      },
+      {
+        text: "Not really",
+        nextText: 99,
+      },
+    ]
+  },
+  {
+    //full ending
+    id: 99,
+    text: "CONNECTION LOST",
+    options:
+    [
+      {
+        text: "RESET",
+        nextText: 99,
       },
     ]
   },
