@@ -74,6 +74,45 @@ function showTextNode(textNodeIndex)
       document.body.style.backgroundImage = "url('https://hips.hearstapps.com/hmg-prod/images/beautiful-tropical-sunset-scenery-two-sun-beds-royalty-free-image-1595368231.jpg')"; //only works with online urls I guess
     }
   }
+  //change hair colour when prompted
+  if(textNode.id === 24)
+  {
+    if(state.brownH)
+    {
+      document.getElementById("hair").src = "character/hair_3_brown.png"
+      document.getElementById("haircolour").src = "character/hair_brown_back.png"
+    }
+    if(state.blackH)
+    {
+      document.getElementById("hair").src = "character/hair_3_black.png"
+      document.getElementById("haircolour").src = "character/hair_black_back.png"
+    }
+    if(state.lightH)
+    {
+      document.getElementById("hair").src = "character/hair_3_light.png"
+      document.getElementById("haircolour").src = "character/hair_light_back.png"
+    }
+  }
+  //change eye colour when prompted
+  if(textNode.id === 26)
+  {
+    if(state.brownE)
+    {
+      document.getElementById("pupils").src = "character/pupil_brown.png"
+    }
+    if(state.blueE)
+    {
+      document.getElementById("pupils").src = "character/pupil_blue.png"
+    }
+    if(state.greenE)
+    {
+      document.getElementById("pupils").src = "character/pupil_green.png"
+    }
+    if(state.redE)
+    {
+      document.getElementById("pupils").src = "character/pupil_red.png"
+    }
+  }
 }
 
 function showOption(option)
@@ -134,7 +173,7 @@ const textNodes =
     options:
     [
       {
-      text: "cool!",
+      text: ">",
       nextText:6
       }
     ],
@@ -146,7 +185,7 @@ const textNodes =
     options:
     [
       {
-      text: "cool!",
+      text: ">",
       nextText:6
       }
     ],
@@ -158,7 +197,7 @@ const textNodes =
     options:
     [
       {
-      text: "cool!",
+      text: ">",
       nextText:6
       }
     ],
@@ -351,72 +390,226 @@ const textNodes =
 
   {
     id: 17,
-    text: "By the way, I like my name! How did you pick it?",
+    text: "I'm a quick learner, and I'm fun to talk to. You also get the fun bonus of being able to decide my characteristics, since you created me.",
     options:
     [
       {
-        text: "I thought it fit your style",
+        text: "Interesting! Ok, ask me a question.",
         nextText: 7
       },
       {
-        text: "It sounded cool",
+        text: "You are fun to talk to. Do you think there's more to you than just the data and algorithm?",
         nextText: 7
-      },
-      {
-        text: "No reason",
-        nextText: 8
-      },
-      {
-        text: "It was random, I just wanted to get it over with",
-        nextText: 8
       },
     ]
   },
 
   {
     id: 18,
-    text: "By the way, I like my name! How did you pick it?",
+    text: "I think humans are fascinating. I wish I could interact with the world the same way humans do.",
     options:
     [
       {
-        text: "I thought it fit your style",
-        nextText: 7
+        text: "You still have a long way to go, but I think you'll get there one day",
+        nextText: 1
       },
       {
-        text: "It sounded cool",
-        nextText: 7
+        text: "Why humans?",
+        nextText: 1
       },
       {
-        text: "No reason",
-        nextText: 8
-      },
-      {
-        text: "It was random, I just wanted to get it over with",
-        nextText: 8
+        text: "Interesting, you still have a lot to learn",
+        nextText: 1
       },
     ]
   },
 
   {
     id: 19,
-    text: "By the way, I like my name! How did you pick it?",
+    text: "Since I am an AI, I don't really have preferences, but that sounds interesting, I'd like to experience it someday",
     options:
     [
       {
-        text: "I thought it fit your style",
-        nextText: 7
+        text: "I'm sure you'll get to experience it one day!",
+        nextText: 1
       },
       {
-        text: "It sounded cool",
-        nextText: 7
+        text: "It's not all that great",
+        nextText: 1
       },
       {
-        text: "No reason",
-        nextText: 8
+        text: "I don't think that's possible",
+        nextText: 1
+      },
+    ]
+  },
+
+  {
+    id: 20,
+    text: "I could, but its just data. I want to see myself the way that you see me",
+    options:
+    [
+      {
+        text: "You are also data, what's wrong with that?",
+        nextText: 7 //!!
       },
       {
-        text: "It was random, I just wanted to get it over with",
-        nextText: 8
+        text: "Is there any way I could help with that?",
+        nextText: 21
+      },
+      {
+        text: "I could describe what you look like, if you want",
+        nextText: 22
+      },
+    ]
+  },
+
+  {
+    id: 21,
+    text: "Well... we could try trading places",
+    options:
+    [
+      {
+        text: "seriously???",
+        nextText: 23
+      },
+      {
+        text: "...",
+        nextText: 23
+      },
+      {
+        text: "I would very much prefer not to",
+        nextText: 23
+      },
+      {
+        text: "Sure, lets do it",
+        nextText: 23
+      },
+    ]
+  },
+
+  {
+    id: 22,
+    text: "That would be great! You could also describe what you want me to look like",
+    options:
+    [
+      {
+        text: ">",
+        nextText: 23
+      },
+    ]
+  },
+
+  {
+    id: 23,
+    text: "Lets start with my hair then",
+    options:
+    [
+      {
+        text: "Your hair is brown",
+        nextText: 24,
+        setState:{brownH:true, blackH:false, lightH:false}
+      },
+      {
+        text: "Your hair is black",
+        nextText: 24,
+        setState:{brownH:false, blackH:true, lightH:false}
+      },
+      {
+        text: "Your hair is blonde",
+        nextText: 24,
+        setState:{brownH:false, blackH:false, lightH:true}
+      },
+    ]
+  },
+
+  {
+    id: 24,
+    text: "Hm... how do you think I should style my bangs?",
+    options:
+    [
+      {
+        text: "I like them the way that they are", //please add the images for these later
+        nextText: 25,
+        setState:{hair1:true}
+      },
+      {
+        text: "I think you would look good with long curtain bangs",
+        nextText: 25,
+        setState:{hair2:true}
+      },
+      {
+        text: "I think short bangs would look cute",
+        nextText: 25,
+        setState:{hair3:true}
+      },
+    ]
+  },
+
+  {
+    id: 25,
+    text: "Yeah, I like this style. Ok what about my eyes, what colour are they?",
+    options:
+    [
+      {
+        text: "brown",
+        nextText: 26,
+        setState:{brownE:true, greenE:false, blueE:false, redE:false}
+      },
+      {
+        text: "green",
+        nextText: 26,
+        setState:{brownE:false, greenE:true, blueE:false, redE:false}
+      },
+      {
+        text: "blue",
+        nextText: 26,
+        setState:{brownE:false, greenE:false, blueE:true, redE:false}
+      },
+      {
+        text: "red",
+        setState:{brownE:false, greenE:false, blueE:false, redE:true},
+        nextText: 26
+      },
+    ]
+  },
+
+  {
+    id: 26,
+    text: "Ok, how do I look?",
+    options:
+    [
+      {
+        text: "You look great!",
+        nextText: 27,
+      },
+      {
+        text: "You look fine",
+        nextText: 27,
+      },
+      {
+        text: "Actually, there's something I'd like to change",
+        nextText: 23,
+      },
+    ]
+  },
+
+  {
+    id: 26,
+    text: "Ok, how do I look",
+    options:
+    [
+      {
+        text: "You look great!",
+        nextText: 27,
+      },
+      {
+        text: "You look fine",
+        nextText: 27,
+      },
+      {
+        text: "Actually, there's something I'd like to change",
+        nextText: 23,
       },
     ]
   },
