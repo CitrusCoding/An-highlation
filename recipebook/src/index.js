@@ -378,7 +378,7 @@ const textNodes =
 
   {
     id: 15,
-    text: "It is rainy today, the temperature is around 4°C to 10°C, make sure to keep warm\n I've never been in the rain, how does it feel?", //too specific?
+    text: "It is cloudy today, and it looks like it might rain, make sure to stay dry.\n I've never been in the rain, how does it feel?", //too specific?
     options:
     [
       {
@@ -480,7 +480,7 @@ const textNodes =
     [
       {
         text: "You are also data, what's wrong with that?",
-        nextText: 34 //!!
+        nextText: 34
       },
       {
         text: "Is there any way I could help with that?",
@@ -536,17 +536,17 @@ const textNodes =
     [
       {
         text: "Your hair is brown",
-        nextText: 24,
+        nextText: 25,
         setState:{brownH:true, blackH:false, lightH:false}
       },
       {
         text: "Your hair is black",
-        nextText: 24,
+        nextText: 25,
         setState:{brownH:false, blackH:true, lightH:false}
       },
       {
         text: "Your hair is blonde",
-        nextText: 24,
+        nextText: 25,
         setState:{brownH:false, blackH:false, lightH:true}
       },
     ]
@@ -557,9 +557,8 @@ const textNodes =
     text: "Interesting... how do you think I should style my bangs?",
     options:
     [
-      {
-        text: "I like them the way that they are", //please add the images for these later
-        nextText: 25,
+      {//unused because I didnt upload the images
+        text: "I like them the way that they are",
         setState:{hair1:true}
       },
       {
