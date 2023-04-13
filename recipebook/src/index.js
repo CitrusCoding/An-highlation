@@ -18,12 +18,13 @@ let state = {}; //keep track of choices
 const textElement = document.getElementById('text');
 const optionButtonsElement = document.getElementById('response-options');
 var body = document.getElementsByTagName('body')[0];
-var bgimage = body.style.backgroundImage; 
+var AIname; 
 
 function startGame()
 {
   state = {};
   showTextNode(1);
+  
 }
 
 function showTextNode(textNodeIndex)
@@ -46,6 +47,33 @@ function showTextNode(textNodeIndex)
       optionButtonsElement.appendChild(button);
     }
   })
+
+  //specific response effects
+  //get the user-inputted name
+  if(textNode.id === 2)
+  {
+    AIname = prompt("Please pick a name for me"); //could make this visually nicer but good for now
+  }
+  //change season based on user's response (IMAGES TEMPORARY)
+  if(textNode.id === 3)
+  {
+    if(state.autumn)
+    {
+      document.body.style.backgroundImage = "url('https://cdn.theatlantic.com/media/img/photo/2022/10/fall-air-images-season/a01_1244081372-1/original.jpg')"; //only works with online urls I guess
+    }
+    if(state.winter)
+    {
+      document.body.style.backgroundImage = "url('https://c.tadst.com/gfx/600x337/winter-lake.jpg?1')"; //only works with online urls I guess
+    }
+    if(state.spring)
+    {
+      document.body.style.backgroundImage = "url('https://media.cnn.com/api/v1/images/stellar/prod/210316134609-01-wisdom-project-spring.jpg?q=w_4000,h_2250,x_0,y_0,c_fill')"; //only works with online urls I guess
+    }
+    if(state.summer)
+    {
+      document.body.style.backgroundImage = "url('https://hips.hearstapps.com/hmg-prod/images/beautiful-tropical-sunset-scenery-two-sun-beds-royalty-free-image-1595368231.jpg')"; //only works with online urls I guess
+    }
+  }
 }
 
 function showOption(option)
@@ -65,21 +93,16 @@ function selectOption(option)
   showTextNode(nextTextNodeId);
 }
 
-function changeImage(image)
-{
-  
-}
-
 //conversation tree
 const textNodes = 
 [
   {
     id: 1,
-    text: "Hello there, Nice to meet you :)",
+    text: "Please pick a name for me.",
     options:
     [
       {
-        text: "Hello",
+        text: "Enter Name",
         nextText: 2
       }
     ]
