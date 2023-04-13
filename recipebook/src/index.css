@@ -9,7 +9,7 @@ body
   width: 100vw; 
   height:100vh; 
   background-color: rgb(128, 128, 128);
-  background-image: url("https://cdn.discordapp.com/attachments/1022022875265388624/1096003297535594496/craiyon_022542_bedroom_with_desk.png"); /*default spring*/
+  background-image: url("https://cdn.discordapp.com/attachments/1022022875265388624/1096003297535594496/craiyon_022542_bedroom_with_desk.png");
   background-repeat: no-repeat;
   background-size: 100% 105%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -22,8 +22,8 @@ body
 img {
   width: 400px;
   position: fixed;
-  bottom: 18%;
-  right: 36%;
+  bottom: 17.7%;
+  right: 35%;
 }
 
 code 

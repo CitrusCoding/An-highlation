@@ -23,13 +23,14 @@ function startGame()
 {
   state = {};
   showTextNode(1);
+  //setTimeout("showTextNode(1)", 3000);
 }
 
 function showTextNode(textNodeIndex)
 {
   //display current conversation text
   const textNode = textNodes.find(textNode => textNode.id === textNodeIndex);
-  textElement.innerText = textNode.text;
+  textElement.innerText = textNode.text; //this is what replaces the text
   //remove the preset 4 responses set when defining the format 
   while(optionButtonsElement.firstChild)
   {
@@ -82,7 +83,7 @@ function showTextNode(textNodeIndex)
     }
   }
   //change hair colour when prompted
-  if(textNode.id === 24)
+  if(textNode.id === 25)
   {
     if(state.brownH)
     {
@@ -138,7 +139,24 @@ function showTextNode(textNodeIndex)
         document.getElementById("hair").src = "character/deleted.png"
     
   }
+  if(textNode.id === 100)
+{
+  //reset scene
+  document.body.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/1022022875265388624/1096003297535594496/craiyon_022542_bedroom_with_desk.png')"
+
+  //delete the character
+  document.getElementById("haircolour").src = "character/hair_brown_back.png"
+  document.getElementById("neck").src = "character/neck.png"
+  document.getElementById("face").src = "character/face.png"
+  document.getElementById("eyes").src = "character/eye_open.png"
+  document.getElementById("pupils").src = "character/pupil_blue.png"
+  document.getElementById("nose").src = "character/nose.png"
+  document.getElementById("eyebrows").src = "character/eyebrow.png"
+  document.getElementById("mouth").src = "character/lip_closed.png"
+  document.getElementById("hair").src = "character/hair_3_brown.png"
 }
+}
+
 
 function showOption(option)
 {
@@ -460,15 +478,15 @@ const textNodes =
     [
       {
         text: "I'm sure you'll get to experience it one day!",
-        nextText: 1
+        nextText: 40
       },
       {
         text: "It's not all that great",
-        nextText: 1
+        nextText: 40
       },
       {
         text: "I don't think that's possible",
-        nextText: 1
+        nextText: 40
       },
     ]
   },
@@ -864,7 +882,17 @@ const textNodes =
     ]
   },
 
-
+  {
+    id: 40,
+    text: "Here's a fun question for you",
+    options:
+    [
+      {
+        text: ">",
+        nextText: 27,
+      },
+    ]
+  },
 
 
   {
@@ -908,6 +936,7 @@ const textNodes =
       },
     ]
   },
+
   {
     //full ending
     id: 99,
@@ -916,7 +945,20 @@ const textNodes =
     [
       {
         text: "RESET",
-        nextText: 99,
+        nextText: 100,
+      },
+    ]
+  },
+
+  {
+    //full ending p2
+    id: 100,
+    text: "UNRECOGNIZED USER: PLEASE RESTART PROGRAM",
+    options:
+    [
+      {
+        text: "RESTART",
+        nextText: -1,
       },
     ]
   },
