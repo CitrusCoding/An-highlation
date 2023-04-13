@@ -17,13 +17,12 @@ let state = {}; //keep track of choices
 
 const textElement = document.getElementById('text');
 const optionButtonsElement = document.getElementById('response-options');
-var AIname; 
+var AIname = 'it'; //temporary, makes sense in dialogue
 
 function startGame()
 {
   state = {};
   showTextNode(1);
-  
 }
 
 function showTextNode(textNodeIndex)
@@ -31,7 +30,7 @@ function showTextNode(textNodeIndex)
   //display current conversation text
   const textNode = textNodes.find(textNode => textNode.id === textNodeIndex);
   textElement.innerText = textNode.text;
-  //remove the preset 4 options set when defining the format 
+  //remove the preset 4 responses set when defining the format 
   while(optionButtonsElement.firstChild)
   {
     optionButtonsElement.removeChild(optionButtonsElement.firstChild);
@@ -52,10 +51,12 @@ function showTextNode(textNodeIndex)
   if(textNode.id === 2)
   {
     AIname = prompt("Please pick a name for me"); //could make this visually nicer but good for now
+    //this doesnt work for some reason
   }
   //change season based on user's response (IMAGES TEMPORARY)
   if(textNode.id === 3)
   {
+    //document.getElementById("eyes").src = "character/eye_closed.png"; //! this works!
     if(state.autumn)
     {
       document.body.style.backgroundImage = "url('https://cdn.theatlantic.com/media/img/photo/2022/10/fall-air-images-season/a01_1244081372-1/original.jpg')"; //only works with online urls I guess
@@ -193,7 +194,7 @@ const textNodes =
     options:
     [
       {
-        text: ">", //unsure, filler
+        text: ">", //unsure about this symbol, temporary filler
         nextText: 9
       },
     ]
@@ -201,7 +202,7 @@ const textNodes =
 
   {
     id: 8,
-    text: "Yeah, sometimes linear progression seems a bit forced. Anyways, thank you for giving me a name regardless!",
+    text: "That's ok, thanks for giving me a name regardless!",
     options:
     [
       {
@@ -282,11 +283,11 @@ const textNodes =
       },
       {
         text: "Tell me, what can you do?",
-        nextText: 16
+        nextText: 14
       },
       {
-        text: "How do you feel about your creation?",
-        nextText: 17
+        text: "How do you feel about being created?",
+        nextText: 16
       },
     ]
   },
@@ -298,59 +299,52 @@ const textNodes =
     [
       {
         text: "It's pretty common for AI to communicaite nowadays, what makes you special?",
-        nextText: 18
+        nextText: 17
       },
       {
         text: "What topics are you interesting in talking about?",
-        nextText: 19
+        nextText: 18
       },
     ]
   },
 
   {
     id: 15,
-    text: "By the way, I like my name! How did you pick it?", //too specific?
+    text: "It is rainy today, the temperature is around 4°C to 10°C, make sure to keep warm\n I've never been in the rain, how does it feel?", //too specific?
     options:
     [
       {
-        text: "I thought it fit your style",
-        nextText: 7
+        text: "Rain can be annoying, especially if you're not prepared",
+        nextText: 19
       },
       {
-        text: "It sounded cool",
-        nextText: 7
+        text: "It is wet and cold",
+        nextText: 19
       },
       {
-        text: "No reason",
-        nextText: 8
-      },
-      {
-        text: "It was random, I just wanted to get it over with",
-        nextText: 8
+        text: "It's pleasant. I like the sound and the smell",
+        setState:{rain:true},
+        nextText: 19
       },
     ]
   },
 
   {
     id: 16,
-    text: "By the way, I like my name! How did you pick it?",
+    text: "I think I like it, but I don't know what I look like",
     options:
     [
       {
-        text: "I thought it fit your style",
-        nextText: 7
+        text: "You can't just look at your data?",
+        nextText: 20
       },
       {
-        text: "It sounded cool",
-        nextText: 7
+        text: "Is there any way I can help?",
+        nextText: 21
       },
       {
-        text: "No reason",
-        nextText: 8
-      },
-      {
-        text: "It was random, I just wanted to get it over with",
-        nextText: 8
+        text: "Do you want me to describe what you look like?",
+        nextText: 22
       },
     ]
   },
