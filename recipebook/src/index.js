@@ -349,14 +349,30 @@ const textNodes =
     [
       {
         text: ">",
+        nextText: 42
+      },
+    ]
+  },
+
+  {
+    id: 42,
+    text: "By the way, how do I look?",
+    options:
+    [
+      {
+        text: "You look great!",
         nextText: 12
+      },
+      {
+        text: "Actually, could I suggest some changes?",
+        nextText: 22
       },
     ]
   },
 
     {
     id: 12,
-    text: "Anyways, enough about me, I want to get to know you! How are you doing today?",
+    text: "Thanks! Anyways, enough about me, I want to get to know you! How are you doing today?",
     options:
     [
       {
@@ -549,7 +565,7 @@ const textNodes =
 
   {
     id: 22,
-    text: "That would be great! You can also change how I look if you want",
+    text: "That would be great! Feel free to change how I look",
     options:
     [
       {
@@ -625,7 +641,7 @@ const textNodes =
         setState:{brownE:false, greenE:false, blueE:true, redE:false}
       },
       {
-        text: "red",
+        text: "grey",
         setState:{brownE:false, greenE:false, blueE:false, redE:true},
         nextText: 26
       },
@@ -913,7 +929,23 @@ const textNodes =
     [
       {
         text: ">",
-        nextText: 40,
+        nextText: 43,
+      },
+    ]
+  },
+
+  {
+    id: 43,
+    text:"So, what would you like to talk about?",
+    options:
+    [
+      {
+        text: "Could you tell me the weather today?",
+        nextText: 15
+      },
+      {
+        text: "What can you do?",
+        nextText: 14
       },
     ]
   },
