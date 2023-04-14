@@ -35,6 +35,7 @@ function showTextNode(textNodeIndex)
 {
   //display current conversation text
   const textNode = textNodes.find(textNode => textNode.id === textNodeIndex);
+  //attempt at text typewriter effect
   /*
   let i = 0;
   while(i < textNode.text.split())
