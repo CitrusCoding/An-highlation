@@ -1,0 +1,74 @@
+body 
+{
+  /*affect positioning on page*/
+  padding: 0;
+  margin: 0;
+  display: flex; 
+  justify-content: center;
+  align-items: flex-end;
+  width: 100vw; 
+  height:100vh; 
+  background-color: rgb(128, 128, 128);
+  background-image: url("https://cdn.discordapp.com/attachments/1022022875265388624/1096003297535594496/craiyon_022542_bedroom_with_desk.png");
+  background-repeat: no-repeat;
+  background-size: 100% 105%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  width: 400px;
+  position: fixed;
+  bottom: 17.7%;
+  right: 35%;
+}
+
+code 
+{
+  box-sizing: border-box;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.dialogue-box
+{
+  /*specific dialogue box formatting*/
+  position: fixed;
+  object-position: bottom;
+  text-align: center;
+  /*height: 70px;*/
+  width: 700px;
+  max-width: 80%;
+  height: 150px;
+  background-color: rgb(240, 248, 255);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.btn-grid
+{
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.btn
+{
+  /*width: 100px;*/ /*this being preset means that the buttons don't resize with text, fix that later if needed*/
+  background-color:azure;
+  border: 1px solid rgb(202, 214, 214);
+  border-radius: 5px;
+  padding: 5px, 10px;
+  outline: none;
+}
+
+.btn:hover
+{
+  /*background-color: aqua;*/
+  border-color: rgb(58, 58, 58);
+}
