@@ -1,6 +1,1 @@
-/* /index.html 200
-
-[[redirects]]
-from = "/index.html"
-to = "/public/index.html"
-status = 200
+/index.html /public/index.html
