@@ -313,7 +313,7 @@ const textNodes =
 
   {
     id: 9,
-    text: "So, what made you try me?",
+    text: "So, what made you try me?", //some people thought this was worded strangely 
     options:
     [
       {
@@ -350,7 +350,7 @@ const textNodes =
     [
       {
         text: ">",
-        nextText: 42
+        nextText: 42 //number jumps because it was added in later
       },
     ]
   },
@@ -659,7 +659,7 @@ const textNodes =
         nextText: 41, 
       },
       {
-        text: "You look fine",
+        text: "You look ok",
         nextText: 41, 
       },
       {
@@ -930,7 +930,7 @@ const textNodes =
     [
       {
         text: ">",
-        nextText: 43,
+        nextText: 12,
       },
     ]
   },
