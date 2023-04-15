@@ -1,8 +1,8 @@
 # AI Companion
-IAT222 Final Project \n
+IAT222 Final Project  
 
-note: I need to change the name of the directory when I am done 
+Main code is in the "An-highlation" folder  
 
-sources:
-https://www.w3schools.com/react/default.asp \n
+main sources:
+https://www.w3schools.com/react/default.asp  
 https://www.youtube.com/watch?v=R1S_NhKkvGA
