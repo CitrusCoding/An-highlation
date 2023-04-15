@@ -656,11 +656,11 @@ const textNodes =
     [
       {
         text: "You look great!",
-        nextText: 41, 
+        nextText: 12, 
       },
       {
         text: "You look ok",
-        nextText: 41, 
+        nextText: 12, 
       },
       {
         text: "Actually, there's something I'd like to change",
