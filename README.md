@@ -1,6 +1,8 @@
 # AI Companion
 IAT222 Final Project  
 
+Want to try it out? Check it out here: https://an-highlation.netlify.app/  
+
 Main code is in the "An-highlation" folder  
 
 main sources:  
