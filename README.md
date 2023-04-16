@@ -1,4 +1,4 @@
-# AI Companion
+# An-Highlation
 IAT222 Final Project  
 
 Main code is in the "AI-Companion" folder  
